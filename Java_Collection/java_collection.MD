@@ -23,7 +23,7 @@ Merupakan parent semua collection di Java , kecuali Map dan hanya digunakan untu
 -> Kode Iterable
 
 java
-Iterable<String> names = List.of("nada","almira");
+Iterable<String> names = List.of("Dyandra","Aurellia");
 for(var name: names) {
     System.out.println(name);
     }
