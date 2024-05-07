@@ -22,11 +22,12 @@ Merupakan parent semua collection di Java , kecuali Map dan hanya digunakan untu
 
 -> Kode Iterable
 
-java
+'''java
 Iterable<String> names = List.of("Dyandra","Aurellia");
 for(var name: names) {
 System.out.println(name);
 }
+'''
 
 _2. Iterator Interface_
 Merupakan interface yang mendefinisikan cara mengakses elemen dalam collection secara berurutan. For-each loop menggunakan Iterator untuk bekerja
