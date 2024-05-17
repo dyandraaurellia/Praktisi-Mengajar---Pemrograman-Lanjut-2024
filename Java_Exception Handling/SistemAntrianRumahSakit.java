@@ -63,20 +63,7 @@ public class SistemAntrianRumahSakit {
                         System.out.println("Prioritas tidak valid. Harap masukkan angka antara 1 dan 5.");
                         scanner.nextLine(); 
                     }
-                }
-                     
-            
-            // else if (pilihan == 2) {
-            //     if (antrian.isEmpty()) {
-            //         System.out.println("Antrian kosong.");
-            //       } else {
-            //         System.out.println("Antrian:");
-            //         while (!antrian.isEmpty()) {
-            //           Pasien pasien = antrian.poll();
-            //           System.out.println("Nama: " + pasien.getNama() + ", Prioritas: " + pasien.getPrioritas());
-            //         }
-            //       }
-            //     }  
+                } 
 
             else if (pilihan == 2) {
                 if (antrian.isEmpty()) {
