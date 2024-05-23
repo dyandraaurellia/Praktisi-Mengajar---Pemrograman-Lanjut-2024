@@ -39,13 +39,12 @@ class Pasien implements Comparable<Pasien> {
 }
 
 public class SistemAntrianRumahSakit {
-    private static final String FILE_NAME = "data_antrian.txt"; // Ubah nama file sementara untuk debugging
+    private static final String FILE_NAME = "data_antrian.txt"; 
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         LinkedList<Pasien> antrian = new LinkedList<>();
 
-        // Load existing data from file
         antrian.addAll(loadAntrianFromFile());
 
         while (true) {
@@ -76,10 +75,8 @@ public class SistemAntrianRumahSakit {
                         }
                         Pasien pasien = new Pasien(nama, prioritas, LocalDate.now());
                         antrian.add(pasien);
-                        antrian.sort(null); // Sort based on priority and date
+                        antrian.sort(null); 
                         System.out.println("Pasien telah ditambahkan.");
-
-                        // Save the updated queue to the file
                         simpanData(antrian);
                     } catch (NumberFormatException e) {
                         System.out.println("Prioritas tidak valid. Harap masukkan angka antara 1 dan 5.");
