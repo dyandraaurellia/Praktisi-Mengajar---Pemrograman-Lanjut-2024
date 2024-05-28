@@ -59,7 +59,6 @@ public class LatihanGUI {
         private Pasien sedangDiproses = null;
 
         public SistemAntrianRumahSakit() {
-            // Load existing data from file
             antrian.addAll(loadAntrianFromFile());
             createAndShowGUI();
         }
@@ -69,11 +68,9 @@ public class LatihanGUI {
             frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             frame.setSize(800, 600);
 
-            // Main panel using BorderLayout
             JPanel mainPanel = new JPanel(new BorderLayout());
             frame.add(mainPanel);
 
-            // Top panel for input using GridBagLayout
             JPanel topPanel = new JPanel(new GridBagLayout());
             GridBagConstraints gbc = new GridBagConstraints();
             gbc.gridx = 0;
@@ -102,7 +99,6 @@ public class LatihanGUI {
             JButton tambahButton = new JButton("Tambah Pasien");
             topPanel.add(tambahButton, gbc);
 
-            // Center panel for displaying queue
             JPanel centerPanel = new JPanel();
             centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
 
@@ -111,7 +107,6 @@ public class LatihanGUI {
             JScrollPane scrollPane = new JScrollPane(antrianArea);
             centerPanel.add(scrollPane);
 
-            // Bottom panel for buttons using FlowLayout
             JPanel bottomPanel = new JPanel(new FlowLayout());
 
             JButton prosesButton = new JButton("Proses Antrian");
@@ -123,12 +118,10 @@ public class LatihanGUI {
             JButton resetButton = new JButton("Reset Antrian");
             bottomPanel.add(resetButton);
 
-            // Adding top, center, and bottom panels to the main panel
             mainPanel.add(topPanel, BorderLayout.NORTH);
             mainPanel.add(centerPanel, BorderLayout.CENTER);
             mainPanel.add(bottomPanel, BorderLayout.SOUTH);
 
-            // Action Listeners
             tambahButton.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -141,7 +134,7 @@ public class LatihanGUI {
                         }
                         Pasien pasien = new Pasien(nama, prioritas, LocalDateTime.now());
                         antrian.add(pasien);
-                        antrian.sort(null); // Sort based on priority and date
+                        antrian.sort(null); 
                         simpanData(antrian);
                         namaTextField.setText("");
                         prioritasTextField.setText("");
@@ -192,7 +185,6 @@ public class LatihanGUI {
                 }
             });
 
-            // Show the frame
             frame.setVisible(true);
         }
 
